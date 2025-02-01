@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+       body {
+         font-family: Arial, sans-serif;
+         background-color: black;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         margin: 0;
+       } 
+       .container {
+            display: flex;
+            justify-content: center;
+           align-items: center;
+            flex-grow: 1;
+       }
+
+       .content {
+          margin-left: -40px; /* Сдвигаем содержимое ближе к телефону */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 7px; 
+       }
+
+       .divi {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            color: #ccc;
+            height: 20px;
+       }
+
+       .divi::before, .divi::after {
+            content: '';
+            flex: 1;
+            height: 0.5px;
+            background-color: #1e1e1e;
+       }
+
+       .divi::before {
+            margin-right: 10px;
+       }
+
+       .divi::after {
+            margin-left: 10px;
+       }
+
+       .login {
+            background-color: black;
+            padding: 10px; /* Reduce padding */
+            border-radius: 3px;
+            width: 325px;
+            height: 380px;
+            text-align: center;
+            font-size: 13px;
+            border: 0.5px solid rgb(50, 50, 50);
+       }
+
+       .login h1 {
+            font-family: 'Billabong', sans-serif;
+            font-size: 48px;
+            color: white;
+       }
+
+       .login input {
+            width: 79%;
+            padding: 7px; /* Reduce padding */
+            margin: 3px 0; /* Reduce vertical margin */
+            border: 1px solid rgb(100, 100, 100);
+            border-radius: 2px;
+            outline: none;
+            background-color: rgb(20, 20, 20);
+            color: white;
+            font-size: 12px;
+       }
+
+       .login .login-but {
+            background-color: #0095f6;
+            color: #fff;
+            border: none;
+            padding: 9px; /* Reduce padding */
+            border-radius: 7px;
+            width: 84%;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 11px;
+       }
+
+       .linkk {
+            text-decoration: none;
+            color: rgb(65, 105, 225);
+            font-weight: bold;
+       }
+
+       #password {
+            color: white;
+            text-decoration: none;
+       }
+
+       .log {
+            background-color: black;
+            padding: 10px; /* Reduce padding */
+            border-radius: 3px;
+            width: 325px;
+            text-align: center;
+            border: 0.5px solid rgb(50, 50, 50);
+            color: white;
+            font-size: 13px;
+       }
+
+       .app {
+            margin-top: 4px; /* Reduce spacing */
+            text-align: center;
+            color: white;
+            font-size: 13px;
+       }
+       .phone-img img {
+            max-width: 400px;
+            height: auto;
+       }
+        .phone-img {
+            margin-right: -40px;
+        }
+       .app img {
+            width: 140px;
+            height: auto;
+            margin: 5px;
+       }
+
+       footer {
+            position: absolute;
+            bottom: -50px;
+            text-align: center;
+            color: gray;
+            font-size: 12px;
+            line-height: 1.6;
+       }
+
+       footer a {
+            color: gray;
+            text-decoration: none;
+            margin: 0 5px;
+       }
+
+       footer a:hover {
+            text-decoration: underline;
+       }
+
+       .language {
+            margin-top: 10px;
+       }
+       #fc {
+        align-items: center;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="phone-img">
+            <img src="iph.png" alt="Phone Preview">
+        </div>
+        <div class="content">
+            <div class="login">
+                <h1>Instagram</h1>
+                <form>
+                    <input type="text" placeholder="Телефон, имя пользователя или эл. адрес">
+                    <input type="password" placeholder="Пароль">
+                    <button class="login-but" type="submit">Войти</button>
+                </form>
+                <div class="divi">ИЛИ</div>
+                <div id="fc">
+                <img src="Facebook.png" style="width: 7%; height: 6%;"> 
+                <a href="#" class="linkk">Войти через Facebook</a></div>
+                <p><a href="#" id="password">Забыли пароль?</a></p> 
+            </div>
+
+            <div class="log">
+                <p>У вас ещё нет аккаунта? <a href="#" class="linkk">Зарегистрироваться</a></p>
+            </div>
+            <div class="app">
+                <p>Установите приложение.</p>
+                <img src="gplay.png" alt="Google Play" id="imm">
+                <img src="micro.png" alt="Microsoft Store" style="width:21%">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <a href="#">Meta</a>
+            <a href="#">Информация</a>
+            <a href="#">Блог</a>
+            <a href="#">Вакансии</a>
+            <a href="#">Помощь</a>
+            <a href="#">API</a>
+            <a href="#">Конфиденциальность</a>
+            <a href="#">Условия</a>
+            <a href="#">Места</a>
+            <a href="#">Instagram Lite</a>
+            <a href="#">Threads</a>
+            <a href="#">Загрузка контактов и лица, не являющиеся пользователями</a>
+            <a href="#">Meta Verified</a>
+        </div>
+        <div class="language">
+            Русский
+        </div>
+        <div>
+            © 2025 Instagram from Meta
+        </div>
+    </footer>
+</body>
+</html>
