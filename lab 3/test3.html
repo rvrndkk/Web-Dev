@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .navbar {
+            background-color: #222;
+        }
+        .navbar-brand {
+            color: white !important;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .done {
+            text-decoration: line-through;
+            color: gray;
+        }
+        .delete {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark">
+        <span class="navbar-brand">ToDo List</span>
+    </nav>
+    <div class="container">
+        <h2 class="text-center">ToDo List</h2>
+        <div class="input-group mb-3">
+            <input type="text" id="taskInput" class="form-control" placeholder="New Task">
+            <div class="input-group-append">
+                <button class="btn btn-primary" onclick="addTask()">Add</button>
+            </div>
+        </div>
+        <ul id="taskList" class="list-group"></ul>
+    </div>
+    
+    <script>
+        function addTask() {
+            let taskInput = document.getElementById("taskInput");
+            let taskText = taskInput.value.trim();
+            if (taskText === "") return;
+
+            let li = document.createElement("li");
+            li.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
+            li.innerHTML = `
+                <div>
+                    <input type="checkbox" onclick="toggleDone(this)"> 
+                    <span>${taskText}</span>
+                </div>
+                <span class="delete" onclick="deleteTask(this)">&times;</span>
+            `;
+            document.getElementById("taskList").appendChild(li);
+            taskInput.value = "";
+        }
+        
+        function toggleDone(checkbox) {
+            let taskText = checkbox.nextElementSibling;
+            taskText.classList.toggle("done", checkbox.checked);
+        }
+        
+        function deleteTask(deleteBtn) {
+            deleteBtn.parentElement.remove();
+        }
+    </script>
+</body>
+</html>
