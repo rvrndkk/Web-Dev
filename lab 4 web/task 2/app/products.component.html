@@ -1,0 +1,13 @@
+<div class="products">
+    <div *ngFor="let product of products" class="product-card">
+      <img [src]="product.images[0]" alt="{{ product.name }}">
+      <img [src]="product.images[1]" alt="{{ product.name }}">
+      <img [src]="product.images[2]" alt="{{ product.name }}">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p>Rating: {{ product.rating }}</p>
+      <button (click)="shareOnWhatsApp(product.link)">Share on WhatsApp</button>
+      <button (click)="shareOnTelegram(product.link)">Share on Telegram</button>
+    </div>
+  </div>
+  
