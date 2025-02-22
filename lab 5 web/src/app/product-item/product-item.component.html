@@ -1,0 +1,17 @@
+<div class="product-card">
+  <img [src]="product.image" alt="{{ product.name }}" class="product-image">
+  <div class="product-info">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p><strong>Цена:</strong> {{ product.price }} ₸</p>
+    <p><strong>Добавлено в избранное:</strong> {{ product.likes }}</p>
+    
+    <button (click)="likeProduct()">Добавить в избранное</button>
+    <button (click)="remove.emit()">Удалить</button>
+    
+    <div class="share-buttons">
+      <button class="whatsapp-btn" (click)="shareOnWhatsApp()">Поделиться в WhatSapp</button>
+      <button class="telegram-btn" (click)="shareOnTelegram()">Поделиться в Telegram</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<h2>{{ categoryName }}</h2>
+<ul>
+  <app-product-item
+    *ngFor="let product of products; let i = index"
+    [product]="product"
+    (remove)="removeProduct(i)"
+  ></app-product-item>
+</ul>
