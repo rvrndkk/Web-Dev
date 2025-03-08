@@ -1,0 +1,6 @@
+<h1>Photos for Album {{ route.snapshot.paramMap.get('id') }}</h1>
+<div *ngFor="let photo of photos">
+  <img [src]="photo.url" [alt]="photo.title" />
+  <p>{{ photo.title }}</p>
+</div>
+<button (click)="onReturn()">Return to Album</button>
