@@ -1,0 +1,32 @@
+<h2>Форма добавления товара</h2>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Название:</label>
+      <input type="text" formControlName="name" required>
+    </div>
+  
+    <div>
+      <label>Цена:</label>
+      <input type="number" formControlName="price" min="0.01" step="0.01" required>
+    </div>
+  
+    <div>
+      <label>Описание:</label>
+      <textarea formControlName="description"></textarea>
+    </div>
+  
+    <div>
+      <label>Количество:</label>
+      <input type="number" formControlName="count" min="1" required>
+    </div>
+  
+    <div>
+      <label>Категория:</label>
+      <select formControlName="category" required>
+        <option value="">Выберите категорию</option>
+        <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.name }}</option>
+      </select>
+    </div>
+  
+    <button type="submit" [disabled]="!productForm.valid">Добавить товар</button>
+  </form>

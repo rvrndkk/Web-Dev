@@ -1,0 +1,10 @@
+<div class="product-card">
+    <h4>{{ product.name }}</h4>
+    <p>{{ product.description }}</p>
+    <p>Цена: {{ product.price }} ₸</p>
+    <p>В наличии: {{ product.count }}</p>
+    <div class="actions">
+      <button (click)="onLike()">❤️ {{ product.likes }}</button>
+      <button (click)="onRemove()">Удалить</button>
+    </div>
+  </div>

@@ -1,0 +1,14 @@
+<div class="category-list">
+    <h2>Категории</h2>
+    <ul>
+      <li *ngFor="let category of categories" 
+          (click)="selectCategory(category.id)"
+          [class.selected]="selectedCategoryId === category.id">
+        {{ category.name }}
+      </li>
+    </ul>
+  </div>
+  <div class="actions">
+  @if (selectedCategoryId) {
+    <app-product-list [categoryId]="selectedCategoryId"></app-product-list>
+  }

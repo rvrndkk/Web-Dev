@@ -1,0 +1,17 @@
+<div class="product-list">
+    <h3>Товары</h3>
+    
+    @if (isLoading) {
+      <div class="loading">Загрузка...</div>
+    } @else {
+      <div class="products">
+        @for (product of products; track product.id) {
+          <app-product-item 
+            [product]="product"
+            (remove)="onRemoveProduct($event)"
+            (like)="onLikeProduct($event)">
+          </app-product-item>
+        }
+      </div>
+    }
+  </div>
