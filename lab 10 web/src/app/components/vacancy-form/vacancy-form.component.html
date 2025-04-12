@@ -1,0 +1,20 @@
+<form (ngSubmit)="onSubmit()" class="vacancy-form">
+    <h4>Add New Position</h4>
+    
+    <div class="form-group">
+      <label for="name">Position Title</label>
+      <input type="text" id="name" [(ngModel)]="vacancy.name" name="name" required>
+    </div>
+  
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" [(ngModel)]="vacancy.description" name="description" required></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label for="salary">Salary ($)</label>
+      <input type="number" id="salary" [(ngModel)]="vacancy.salary" name="salary" min="0" required>
+    </div>
+  
+    <button type="submit" class="submit-btn">Post Vacancy</button>
+  </form>
